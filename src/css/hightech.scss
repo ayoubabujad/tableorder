@@ -1,0 +1,1220 @@
+/* ============================================
+   🚀 HIGH-TECH DESIGN SYSTEM v1.0
+   Premium Design Language for Restaurant Apps
+   Inspired by Apple, Uber Eats, Stripe, DoorDash
+   ============================================ */
+
+/* ============================================
+   🎨 DESIGN TOKENS - STAFF APP THEME
+   Clean, Professional Design
+   ============================================ */
+:root {
+  /* Primary Colors - Blue (Staff App Style) */
+  --ht-primary: #3b82f6;
+  --ht-primary-light: #eff6ff;
+  --ht-primary-dark: #1e40af;
+  --ht-primary-gradient: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+
+  /* Secondary Colors */
+  --ht-secondary: #1e3a5f;
+  --ht-secondary-light: #e0e7ff;
+
+  /* Accent Colors - Green for prices/success */
+  --ht-accent: #059669;
+  --ht-accent-light: #d1fae5;
+
+  /* Price Color */
+  --ht-price: #059669;
+  --ht-success: #22c55e;
+  --ht-success-light: #dcfce7;
+  --ht-danger: #f43f5e;
+  --ht-danger-light: #ffe4e6;
+  --ht-warning: #f97316;
+  --ht-info: #0ea5e9;
+
+  /* Neutral Colors */
+  --ht-bg: #f8fafc;
+  --ht-bg-elevated: #ffffff;
+  --ht-surface: #ffffff;
+  --ht-text: #0f172a;
+  --ht-text-secondary: #64748b;
+  --ht-text-tertiary: #94a3b8;
+  --ht-border: rgba(15, 23, 42, 0.08);
+  --ht-border-strong: rgba(15, 23, 42, 0.16);
+  --ht-divider: rgba(15, 23, 42, 0.06);
+
+  /* Shadows */
+  --ht-shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --ht-shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.08);
+  --ht-shadow-md: 0 4px 16px rgba(15, 23, 42, 0.1);
+  --ht-shadow-lg: 0 8px 24px rgba(15, 23, 42, 0.12);
+  --ht-shadow-xl: 0 16px 48px rgba(15, 23, 42, 0.16);
+  --ht-shadow-glow: 0 0 30px rgba(59, 130, 246, 0.4);
+
+  /* Border Radius */
+  --ht-radius-xs: 6px;
+  --ht-radius-sm: 10px;
+  --ht-radius-md: 14px;
+  --ht-radius-lg: 18px;
+  --ht-radius-xl: 24px;
+  --ht-radius-2xl: 32px;
+  --ht-radius-full: 9999px;
+
+  /* Spacing */
+  --ht-space-xs: 4px;
+  --ht-space-sm: 8px;
+  --ht-space-md: 16px;
+  --ht-space-lg: 24px;
+  --ht-space-xl: 32px;
+  --ht-space-2xl: 48px;
+
+  /* Typography */
+  --ht-font-display: 800;
+  --ht-font-bold: 700;
+  --ht-font-semibold: 600;
+  --ht-font-medium: 500;
+  --ht-font-normal: 400;
+
+  /* Transitions */
+  --ht-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --ht-transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --ht-transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --ht-transition-bounce: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Z-Index Scale */
+  --ht-z-base: 1;
+  --ht-z-dropdown: 100;
+  --ht-z-sticky: 200;
+  --ht-z-fixed: 300;
+  --ht-z-modal: 400;
+  --ht-z-toast: 500;
+}
+
+/* ============================================
+   🌙 DARK MODE TOKENS
+   ============================================ */
+body.body--dark {
+  --ht-bg: #0f172a;
+  --ht-bg-elevated: #1e293b;
+  --ht-surface: #1e293b;
+  --ht-text: #f1f5f9;
+  --ht-text-secondary: #94a3b8;
+  --ht-text-tertiary: #64748b;
+  --ht-border: rgba(148, 163, 184, 0.12);
+  --ht-border-strong: rgba(148, 163, 184, 0.24);
+  --ht-divider: rgba(148, 163, 184, 0.08);
+
+  --ht-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --ht-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --ht-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   📱 HIGH-TECH HEADER
+   ============================================ */
+.ht-header {
+  background: var(--ht-primary-gradient) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: none;
+  box-shadow: var(--ht-shadow-md) !important;
+}
+
+.ht-header .q-toolbar__title,
+.ht-header .text-white {
+  color: white !important;
+}
+
+.ht-header .q-toolbar {
+  min-height: 56px;
+  padding: 0 var(--ht-space-md);
+}
+
+.ht-header-title {
+  font-size: 18px;
+  font-weight: var(--ht-font-bold);
+  color: white;
+  letter-spacing: -0.3px;
+}
+
+.ht-header-action {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--ht-radius-sm);
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--ht-transition-fast);
+  cursor: pointer;
+}
+
+.ht-header-action:active {
+  transform: scale(0.95);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ============================================
+   🦶 HIGH-TECH FOOTER / NAVIGATION BAR
+   ============================================ */
+.ht-footer {
+  background: var(--ht-surface) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--ht-border);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05) !important;
+  padding: var(--ht-space-sm) var(--ht-space-md) !important;
+  border-radius: 0 !important;
+}
+
+.ht-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: var(--ht-primary-gradient);
+  border-radius: var(--ht-radius-2xl);
+  padding: var(--ht-space-sm) var(--ht-space-xs);
+  box-shadow: var(--ht-shadow-lg), var(--ht-shadow-glow);
+}
+
+.ht-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ht-space-sm) var(--ht-space-md);
+  border-radius: var(--ht-radius-lg);
+  transition: var(--ht-transition-base);
+  position: relative;
+  min-width: 56px;
+  cursor: pointer;
+}
+
+.ht-nav-item:active {
+  transform: scale(0.92);
+}
+
+.ht-nav-item.active {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.ht-nav-item .ht-nav-icon {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.85);
+  transition: var(--ht-transition-fast);
+}
+
+.ht-nav-item.active .ht-nav-icon {
+  color: white;
+  transform: scale(1.1);
+}
+
+.ht-nav-item .ht-nav-label {
+  font-size: 10px;
+  font-weight: var(--ht-font-semibold);
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2px;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: var(--ht-transition-fast);
+}
+
+.ht-nav-item.active .ht-nav-label {
+  opacity: 1;
+  transform: translateY(0);
+  color: white;
+}
+
+.ht-nav-badge {
+  position: absolute;
+  top: 2px;
+  right: 8px;
+  min-width: 18px;
+  height: 18px;
+  background: var(--ht-danger);
+  color: white;
+  font-size: 10px;
+  font-weight: var(--ht-font-bold);
+  border-radius: var(--ht-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  border: 2px solid var(--ht-primary);
+  animation: ht-badge-pulse 2s infinite;
+}
+
+@keyframes ht-badge-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* ============================================
+   🎴 HIGH-TECH CARDS
+   ============================================ */
+.ht-card {
+  background: var(--ht-surface);
+  border-radius: var(--ht-radius-xl);
+  box-shadow: var(--ht-shadow-sm);
+  border: 1px solid var(--ht-border);
+  overflow: hidden;
+  transition: var(--ht-transition-base);
+}
+
+.ht-card:active {
+  transform: scale(0.98);
+}
+
+.ht-card-hover:hover {
+  box-shadow: var(--ht-shadow-md);
+  transform: translateY(-2px);
+}
+
+.ht-card-elevated {
+  box-shadow: var(--ht-shadow-md);
+}
+
+.ht-card-glow {
+  box-shadow: var(--ht-shadow-md), var(--ht-shadow-glow);
+}
+
+/* ============================================
+   🍽️ HIGH-TECH MENU ITEM CARDS
+   ============================================ */
+.ht-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--ht-space-sm);
+}
+
+.ht-menu-item {
+  background: var(--ht-surface);
+  border-radius: var(--ht-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--ht-shadow-sm);
+  border: 1px solid var(--ht-border);
+  transition: var(--ht-transition-base);
+  cursor: pointer;
+}
+
+.ht-menu-item:active {
+  transform: scale(0.97);
+}
+
+.ht-menu-item-image {
+  position: relative;
+  aspect-ratio: 1;
+  background: var(--ht-bg);
+  overflow: hidden;
+}
+
+.ht-menu-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--ht-transition-slow);
+}
+
+.ht-menu-item:hover .ht-menu-item-image img {
+  transform: scale(1.05);
+}
+
+.ht-menu-item-badge {
+  position: absolute;
+  top: var(--ht-space-sm);
+  left: var(--ht-space-sm);
+  padding: 4px 10px;
+  background: var(--ht-danger);
+  color: white;
+  font-size: 11px;
+  font-weight: var(--ht-font-bold);
+  border-radius: var(--ht-radius-sm);
+  z-index: 2;
+}
+
+.ht-menu-item-fav {
+  position: absolute;
+  top: var(--ht-space-sm);
+  right: var(--ht-space-sm);
+  width: 32px;
+  height: 32px;
+  background: var(--ht-surface);
+  border-radius: var(--ht-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--ht-shadow-sm);
+  z-index: 2;
+  cursor: pointer;
+  transition: var(--ht-transition-fast);
+}
+
+.ht-menu-item-fav:active {
+  transform: scale(0.9);
+}
+
+.ht-menu-item-add {
+  position: absolute;
+  bottom: var(--ht-space-sm);
+  right: var(--ht-space-sm);
+  width: 36px;
+  height: 36px;
+  background: var(--ht-surface);
+  border: 2px solid var(--ht-success);
+  border-radius: var(--ht-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--ht-shadow-md);
+  z-index: 2;
+  cursor: pointer;
+  transition: var(--ht-transition-bounce);
+}
+
+.ht-menu-item-add:active {
+  transform: scale(0.85);
+}
+
+.ht-menu-item-add.added {
+  background: var(--ht-success);
+  border-color: var(--ht-success);
+  color: white;
+}
+
+.ht-menu-item-add .add-icon {
+  font-size: 20px;
+  color: var(--ht-success);
+}
+
+.ht-menu-item-add.added .add-icon,
+.ht-menu-item-add.added .add-qty {
+  color: white;
+}
+
+.ht-menu-item-add .add-qty {
+  font-size: 14px;
+  font-weight: var(--ht-font-bold);
+}
+
+.ht-menu-item-content {
+  padding: var(--ht-space-sm);
+}
+
+.ht-menu-item-name {
+  font-size: 13px;
+  font-weight: var(--ht-font-semibold);
+  color: var(--ht-text);
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.ht-menu-item-price {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ht-menu-item-price-current {
+  font-size: 14px;
+  font-weight: var(--ht-font-bold);
+  color: var(--ht-primary-dark);
+}
+
+.ht-menu-item-price-old {
+  font-size: 12px;
+  color: var(--ht-text-tertiary);
+  text-decoration: line-through;
+}
+
+.ht-menu-item-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.ht-menu-item-rating-star {
+  color: #fbbf24;
+  font-size: 12px;
+}
+
+.ht-menu-item-rating-value {
+  font-size: 11px;
+  font-weight: var(--ht-font-semibold);
+  color: var(--ht-text);
+}
+
+.ht-menu-item-rating-count {
+  font-size: 11px;
+  color: var(--ht-text-tertiary);
+}
+
+/* Out of Stock */
+.ht-menu-item-unavailable .ht-menu-item-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.ht-menu-item-unavailable-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(239, 68, 68, 0.95);
+  color: white;
+  font-size: 11px;
+  font-weight: var(--ht-font-bold);
+  padding: 6px 12px;
+  border-radius: var(--ht-radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 3;
+}
+
+/* ============================================
+   📜 HIGH-TECH HORIZONTAL SCROLL
+   ============================================ */
+.ht-scroll {
+  display: flex;
+  gap: var(--ht-space-md);
+  overflow-x: auto;
+  padding: var(--ht-space-sm) 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.ht-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.ht-scroll-item {
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: var(--ht-transition-base);
+}
+
+.ht-scroll-item:active {
+  transform: scale(0.95);
+}
+
+/* ============================================
+   🏷️ HIGH-TECH CATEGORY PILLS
+   ============================================ */
+.ht-category-scroll {
+  display: flex;
+  gap: var(--ht-space-sm);
+  overflow-x: auto;
+  padding: var(--ht-space-sm) 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.ht-category-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.ht-category-pill {
+  display: flex;
+  align-items: center;
+  gap: var(--ht-space-sm);
+  padding: var(--ht-space-sm) var(--ht-space-md) var(--ht-space-sm) var(--ht-space-sm);
+  background: var(--ht-surface);
+  border-radius: var(--ht-radius-full);
+  border: 2px solid transparent;
+  box-shadow: var(--ht-shadow-xs);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: var(--ht-transition-base);
+}
+
+.ht-category-pill:active {
+  transform: scale(0.97);
+}
+
+.ht-category-pill.active {
+  border-color: var(--ht-primary);
+  background: var(--ht-primary-light);
+}
+
+.ht-category-pill-image {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--ht-radius-full);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.ht-category-pill-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ht-category-pill-name {
+  font-size: 13px;
+  font-weight: var(--ht-font-bold);
+  color: var(--ht-text);
+}
+
+/* ============================================
+   ⭐ HIGH-TECH RECOMMENDED ITEMS
+   ============================================ */
+.ht-recommended-scroll {
+  display: flex;
+  gap: var(--ht-space-lg);
+  overflow-x: auto;
+  padding: var(--ht-space-sm) 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.ht-recommended-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.ht-recommended-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--ht-space-sm);
+  min-width: 80px;
+  cursor: pointer;
+  transition: var(--ht-transition-base);
+}
+
+.ht-recommended-item:active {
+  transform: scale(0.92);
+}
+
+.ht-recommended-avatar {
+  position: relative;
+  width: 72px;
+  height: 72px;
+}
+
+.ht-recommended-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--ht-radius-full);
+  border: 3px solid var(--ht-surface);
+  box-shadow: var(--ht-shadow-md);
+}
+
+.ht-recommended-avatar::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: var(--ht-radius-full);
+  border: 2px solid var(--ht-primary);
+  opacity: 0;
+  transition: var(--ht-transition-fast);
+}
+
+.ht-recommended-item:hover .ht-recommended-avatar::before {
+  opacity: 1;
+}
+
+.ht-recommended-name {
+  font-size: 12px;
+  font-weight: var(--ht-font-semibold);
+  color: var(--ht-text);
+  text-align: center;
+  max-width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ht-recommended-price {
+  font-size: 12px;
+  font-weight: var(--ht-font-bold);
+  color: var(--ht-primary-dark);
+}
+
+/* ============================================
+   🏷️ HIGH-TECH OFFER CARDS
+   ============================================ */
+.ht-offers-scroll {
+  display: flex;
+  gap: var(--ht-space-md);
+  overflow-x: auto;
+  padding: var(--ht-space-sm) 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.ht-offers-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.ht-offer-card {
+  position: relative;
+  min-width: 150px;
+  background: var(--ht-surface);
+  border-radius: var(--ht-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--ht-shadow-sm);
+  cursor: pointer;
+  transition: var(--ht-transition-base);
+}
+
+.ht-offer-card:active {
+  transform: scale(0.97);
+}
+
+.ht-offer-badge {
+  position: absolute;
+  top: var(--ht-space-sm);
+  left: var(--ht-space-sm);
+  padding: 4px 10px;
+  background: linear-gradient(135deg, var(--ht-danger) 0%, #dc2626 100%);
+  color: white;
+  font-size: 11px;
+  font-weight: var(--ht-font-bold);
+  border-radius: var(--ht-radius-sm);
+  z-index: 2;
+}
+
+.ht-offer-image {
+  height: 100px;
+  background: var(--ht-bg);
+  overflow: hidden;
+}
+
+.ht-offer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ht-offer-content {
+  padding: var(--ht-space-sm);
+}
+
+.ht-offer-name {
+  font-size: 13px;
+  font-weight: var(--ht-font-semibold);
+  color: var(--ht-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 4px;
+}
+
+.ht-offer-price {
+  font-size: 14px;
+  font-weight: var(--ht-font-bold);
+  color: var(--ht-primary-dark);
+}
+
+/* ============================================
+   📑 HIGH-TECH SECTION HEADERS
+   ============================================ */
+.ht-section {
+  margin-bottom: var(--ht-space-xl);
+}
+
+.ht-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--ht-space-md);
+}
+
+.ht-section-title-group {
+  display: flex;
+  align-items: center;
+  gap: var(--ht-space-sm);
+}
+
+.ht-section-emoji {
+  width: 32px;
+  height: 32px;
+  background: var(--ht-primary-light);
+  border-radius: var(--ht-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.ht-section-emoji.sale {
+  background: var(--ht-danger-light);
+}
+
+.ht-section-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: var(--ht-font-display);
+  color: var(--ht-text);
+  letter-spacing: -0.3px;
+}
+
+.ht-section-subtitle {
+  font-size: 13px;
+  color: var(--ht-text-secondary);
+  margin-top: 2px;
+}
+
+.ht-section-action {
+  font-size: 13px;
+  font-weight: var(--ht-font-semibold);
+  color: var(--ht-primary-dark);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+/* ============================================
+   📦 HIGH-TECH CATEGORY SECTION (Menu)
+   ============================================ */
+.ht-category-section {
+  background: var(--ht-surface);
+  border-radius: var(--ht-radius-xl);
+  padding: var(--ht-space-lg);
+  margin-bottom: var(--ht-space-xl);
+  box-shadow: var(--ht-shadow-sm);
+}
+
+.ht-category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--ht-space-md);
+  border-bottom: 1px solid var(--ht-border);
+  margin-bottom: var(--ht-space-md);
+}
+
+.ht-category-title-group {
+  display: flex;
+  align-items: center;
+  gap: var(--ht-space-sm);
+}
+
+.ht-category-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--ht-radius-md);
+  overflow: hidden;
+  box-shadow: var(--ht-shadow-xs);
+}
+
+.ht-category-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ht-category-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: var(--ht-font-bold);
+  color: var(--ht-text);
+}
+
+.ht-category-count {
+  font-size: 13px;
+  color: var(--ht-text-secondary);
+  font-weight: var(--ht-font-medium);
+}
+
+/* ============================================
+   🔘 HIGH-TECH BUTTONS
+   ============================================ */
+.ht-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ht-space-sm);
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: var(--ht-font-semibold);
+  border-radius: var(--ht-radius-md);
+  border: none;
+  cursor: pointer;
+  transition: var(--ht-transition-base);
+}
+
+.ht-btn:active {
+  transform: scale(0.97);
+}
+
+.ht-btn-primary {
+  background: var(--ht-primary-gradient);
+  color: white !important;
+  box-shadow: var(--ht-shadow-sm);
+}
+
+.ht-btn-primary:hover {
+  box-shadow: var(--ht-shadow-md), var(--ht-shadow-glow);
+}
+
+.ht-btn-secondary {
+  background: var(--ht-bg);
+  color: var(--ht-text);
+  border: 1px solid var(--ht-border);
+}
+
+.ht-btn-success {
+  background: var(--ht-success);
+  color: white;
+}
+
+.ht-btn-ghost {
+  background: transparent;
+  color: var(--ht-text);
+}
+
+/* Header ghost buttons should be white */
+.ht-header .ht-btn-ghost {
+  color: white;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.ht-header .ht-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.ht-btn-icon {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: var(--ht-radius-md);
+}
+
+.ht-btn-fab {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--ht-radius-full);
+  box-shadow: var(--ht-shadow-lg);
+}
+
+/* ============================================
+   🔔 HIGH-TECH BADGES
+   ============================================ */
+.ht-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: var(--ht-font-bold);
+  border-radius: var(--ht-radius-sm);
+}
+
+.ht-badge-primary {
+  background: var(--ht-primary-light);
+  color: var(--ht-primary-dark);
+}
+
+.ht-badge-success {
+  background: var(--ht-success-light);
+  color: #059669;
+}
+
+.ht-badge-danger {
+  background: var(--ht-danger-light);
+  color: var(--ht-danger);
+}
+
+/* ============================================
+   📍 HIGH-TECH LOCATION BAR
+   ============================================ */
+.ht-location-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--ht-space-sm);
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--ht-radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: var(--ht-transition-base);
+}
+
+.ht-location-bar:active {
+  transform: scale(0.98);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.ht-location-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: var(--ht-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+}
+
+.ht-location-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--ht-radius-sm);
+  background: rgba(255, 255, 255, 0.5);
+  animation: ht-pulse 2s infinite;
+}
+
+@keyframes ht-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0; }
+}
+
+.ht-location-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ht-location-label {
+  font-size: 11px;
+  font-weight: var(--ht-font-semibold);
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ht-location-address {
+  font-size: 14px;
+  font-weight: var(--ht-font-bold);
+  color: white;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ============================================
+   🔍 HIGH-TECH SEARCH BAR
+   ============================================ */
+.ht-search-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--ht-space-sm);
+  padding: 14px 16px;
+  background: var(--ht-surface);
+  border-radius: var(--ht-radius-lg);
+  box-shadow: var(--ht-shadow-md);
+  cursor: pointer;
+  transition: var(--ht-transition-base);
+}
+
+.ht-search-bar:active {
+  transform: scale(0.98);
+}
+
+.ht-search-icon {
+  color: var(--ht-text-secondary);
+}
+
+.ht-search-placeholder {
+  flex: 1;
+  font-size: 15px;
+  font-weight: var(--ht-font-medium);
+  color: var(--ht-text-secondary);
+}
+
+.ht-search-shortcut {
+  padding: 4px 8px;
+  background: var(--ht-bg);
+  border-radius: var(--ht-radius-xs);
+  font-size: 11px;
+  font-weight: var(--ht-font-semibold);
+  color: var(--ht-text-tertiary);
+}
+
+/* ============================================
+   📝 HIGH-TECH LOADING SKELETONS
+   ============================================ */
+.ht-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--ht-bg) 0%,
+    var(--ht-border) 50%,
+    var(--ht-bg) 100%
+  );
+  background-size: 200% 100%;
+  animation: ht-shimmer 1.5s infinite;
+  border-radius: var(--ht-radius-md);
+}
+
+@keyframes ht-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.ht-skeleton-circle {
+  border-radius: var(--ht-radius-full);
+}
+
+.ht-skeleton-text {
+  height: 14px;
+  border-radius: var(--ht-radius-xs);
+}
+
+.ht-skeleton-text.lg {
+  height: 20px;
+}
+
+/* ============================================
+   🏁 HIGH-TECH END OF LIST
+   ============================================ */
+.ht-end-list {
+  display: flex;
+  align-items: center;
+  gap: var(--ht-space-md);
+  padding: var(--ht-space-xl) 0;
+  color: var(--ht-text-tertiary);
+  font-size: 13px;
+  font-weight: var(--ht-font-medium);
+}
+
+.ht-end-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ht-border), transparent);
+}
+
+/* ============================================
+   ⬆️ HIGH-TECH SCROLL TO TOP
+   ============================================ */
+.ht-scroll-top {
+  width: 48px;
+  height: 48px;
+  background: var(--ht-primary-gradient) !important;
+  border-radius: var(--ht-radius-full) !important;
+  box-shadow: var(--ht-shadow-lg), var(--ht-shadow-glow) !important;
+  color: white !important;
+  transition: var(--ht-transition-base);
+}
+
+.ht-scroll-top:active {
+  transform: scale(0.9);
+}
+
+/* ============================================
+   🎯 UTILITY CLASSES
+   ============================================ */
+.ht-glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.ht-gradient-primary {
+  background: var(--ht-primary-gradient);
+}
+
+.ht-text-primary { color: var(--ht-text) !important; }
+.ht-text-secondary { color: var(--ht-text-secondary) !important; }
+.ht-text-accent { color: var(--ht-primary) !important; }
+.ht-text-success { color: var(--ht-success) !important; }
+.ht-text-danger { color: var(--ht-danger) !important; }
+
+.ht-bg-primary { background: var(--ht-primary); }
+.ht-bg-surface { background: var(--ht-surface); }
+.ht-bg-elevated { background: var(--ht-bg-elevated); }
+
+.ht-shadow-sm { box-shadow: var(--ht-shadow-sm); }
+.ht-shadow-md { box-shadow: var(--ht-shadow-md); }
+.ht-shadow-lg { box-shadow: var(--ht-shadow-lg); }
+.ht-shadow-glow { box-shadow: var(--ht-shadow-glow); }
+
+.ht-rounded-sm { border-radius: var(--ht-radius-sm); }
+.ht-rounded-md { border-radius: var(--ht-radius-md); }
+.ht-rounded-lg { border-radius: var(--ht-radius-lg); }
+.ht-rounded-xl { border-radius: var(--ht-radius-xl); }
+.ht-rounded-full { border-radius: var(--ht-radius-full); }
+
+/* ============================================
+   📄 PAGE & LIST COMPONENTS
+   ============================================ */
+.ht-page {
+  background: var(--ht-bg);
+  min-height: 100vh;
+}
+
+.ht-list-item {
+  background: var(--ht-surface);
+  border-radius: var(--ht-radius-lg);
+  padding: var(--ht-space-md);
+  margin-bottom: var(--ht-space-sm);
+  box-shadow: var(--ht-shadow-xs);
+  border: 1px solid var(--ht-border);
+  cursor: pointer;
+  transition: var(--ht-transition-base);
+}
+
+.ht-list-item:active {
+  transform: scale(0.98);
+}
+
+.ht-icon-box {
+  width: 44px;
+  height: 44px;
+  background: var(--ht-primary-light);
+  border-radius: var(--ht-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ht-primary);
+}
+
+.ht-notification-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--ht-danger);
+  border-radius: var(--ht-radius-full);
+}
+
+/* ============================================
+   🚫 EMPTY STATE
+   ============================================ */
+.ht-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ht-space-2xl);
+  text-align: center;
+}
+
+.ht-empty-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--ht-primary-light);
+  border-radius: var(--ht-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--ht-space-md);
+  color: var(--ht-primary);
+  font-size: 40px;
+}
+
+.ht-empty-title {
+  font-size: 18px;
+  font-weight: var(--ht-font-bold);
+  color: var(--ht-text);
+  margin-bottom: var(--ht-space-xs);
+}
+
+.ht-empty-subtitle {
+  font-size: 14px;
+  color: var(--ht-text-secondary);
+}
