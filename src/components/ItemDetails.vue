@@ -454,7 +454,8 @@ export default {
       // Reset image data to prevent stale images
       this.image_featured = "";
       this.item_gallery = [];
-      this.loading = false;
+      // Keep loading true to show skeleton until data loads
+      this.loading = true;
     },
     getMenuItem() {
       this.CartData.home_view_items = true;
