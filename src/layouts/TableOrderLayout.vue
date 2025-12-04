@@ -92,7 +92,7 @@ export default {
 
     // Use store getters for reactive cart data
     const cartCount = computed(() => CartData.getCartCount);
-    const cartTotal = computed(() => CartData.getTotal || "");
+    const cartTotal = computed(() => CartData.getTotal || CartData.getSubtotal || "");
     const hasItems = computed(() => CartData.hasItem);
 
     const goToCart = () => {

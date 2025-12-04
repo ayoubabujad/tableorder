@@ -451,6 +451,10 @@ export default {
       this.item_total = 0;
       this.disabled_cart = true;
       this.slide_items = 0;
+      // Reset image data to prevent stale images
+      this.image_featured = "";
+      this.item_gallery = [];
+      this.loading = false;
     },
     getMenuItem() {
       this.CartData.home_view_items = true;
